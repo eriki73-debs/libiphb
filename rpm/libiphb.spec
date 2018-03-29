@@ -11,7 +11,7 @@ Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(dbus-glib-1)
-BuildRequires:  pkgconfig(dsme)
+BuildRequires:  pkgconfig(dsme) >= 0.65.0
 BuildRequires:  pkgconfig(mce) >= 1.12.3
 
 %description
