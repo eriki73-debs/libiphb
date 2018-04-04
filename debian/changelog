@@ -1,3 +1,9 @@
+libiphb (1.2.5) unstable; urgency=low
+
+  * [dsme] Make dsme message type identifiers unique. JB#38500
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Wed, 04 Apr 2018 08:47:35 +0300
+
 libiphb (1.2.4) unstable; urgency=low
 
   * [compilation] Enable extra compilation warnings. Contributes to MER#1005
