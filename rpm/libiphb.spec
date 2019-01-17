@@ -36,6 +36,15 @@ Requires:   %{name} = %{version}-%{release}
 Tests package to test IP Heartbeat functionality.
 
 
+%package doc
+Summary:   Documentation for %{name}
+Group:     Documentation
+Requires:  %{name} = %{version}-%{release}
+
+%description doc
+%{summary}.
+
+
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -53,6 +62,10 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 %make_install
 
+mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
+install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
+AUTHORS INSTALL README NEWS ChangeLog
+
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
@@ -60,19 +73,18 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %{_libdir}/libiphb.so.*
-%doc COPYING AUTHORS INSTALL README NEWS ChangeLog
+%license COPYING
 
 %files devel
 %defattr(-,root,root,-)
 %attr(644,root,root)%{_includedir}/iphbd/*
 %{_libdir}/libiphb.so
 %{_libdir}/pkgconfig/libiphb.pc
-%doc COPYING
 
 %files tests
 %defattr(-,root,root,-)
-/opt/tests/%{name}-tests/bin/hbtest
-/opt/tests/%{name}-tests/bin/hbtest2
-/opt/tests/%{name}-tests/bin/hbtest3
-/opt/tests/%{name}-tests/tests.xml
-%doc COPYING
+/opt/tests/%{name}-tests
+
+%files doc
+%defattr(-,root,root,-)
+%{_docdir}/%{name}-%{version}
