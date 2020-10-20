@@ -8,9 +8,8 @@ URL:        http://github.com/nemomobile/libiphb
 Source0:    %{name}-%{version}.tar.bz2
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
-BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(dbus-1)
-BuildRequires:  pkgconfig(dbus-glib-1)
+BuildRequires:  pkgconfig(glib-2.0) >= 2.24
+BuildRequires:  pkgconfig(dbus-1)  >= 1.8
 BuildRequires:  pkgconfig(dsme) >= 0.65.0
 BuildRequires:  pkgconfig(mce) >= 1.12.3
 
