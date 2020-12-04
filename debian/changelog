@@ -1,3 +1,12 @@
+libiphb (1.2.7) unstable; urgency=low
+
+  * [libiphb] Use dbus-gmain instead of dbus-glib. JB#51115
+  * [libiphb] Replace deprecated autoconf macro
+  * [packaging] Specfile cleanup, update URL
+  * [debian] Remove dbus-glib dependency. JB#51115
+
+ -- Simo Piiroinen <simo.piiroinen@jollamobile.com>  Fri, 04 Dec 2020 11:52:59 +0200
+
 libiphb (1.2.6) unstable; urgency=low
 
   * [packaging] Remove libtool .la files in RPM SPEC

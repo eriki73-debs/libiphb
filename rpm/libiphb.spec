@@ -1,6 +1,6 @@
 Name:       libiphb
 Summary:    API for IP Heartbeat service
-Version:    1.2.6
+Version:    1.2.7
 Release:    0
 License:    LGPLv2+
 URL:        https://git.sailfishos.org/mer-core/libiphb
