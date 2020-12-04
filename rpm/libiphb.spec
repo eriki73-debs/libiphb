@@ -2,15 +2,13 @@ Name:       libiphb
 Summary:    API for IP Heartbeat service
 Version:    1.2.6
 Release:    0
-Group:      System/System Control
 License:    LGPLv2+
-URL:        http://github.com/nemomobile/libiphb
+URL:        https://git.sailfishos.org/mer-core/libiphb
 Source0:    %{name}-%{version}.tar.bz2
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
-BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(dbus-1)
-BuildRequires:  pkgconfig(dbus-glib-1)
+BuildRequires:  pkgconfig(glib-2.0) >= 2.24
+BuildRequires:  pkgconfig(dbus-1)  >= 1.8
 BuildRequires:  pkgconfig(dsme) >= 0.65.0
 BuildRequires:  pkgconfig(mce) >= 1.12.3
 
@@ -20,7 +18,6 @@ This package contains C API for using IP Heartbeat service.
 
 %package devel
 Summary:    Development files for IP Heartbeat service
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -29,7 +26,6 @@ This package contains C headers for the IP Heartbeat API.
 
 %package tests
 Summary:    Tests package for IP Heartbeat service
-Group:      Development/Tools
 Requires:   %{name} = %{version}-%{release}
 
 %description tests
@@ -46,7 +42,7 @@ Requires:  %{name} = %{version}-%{release}
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 unset LD_AS_NEEDED

@@ -1,7 +1,7 @@
 # Package name and version
 AC_INIT(libiphb, 1.2.6)
 
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([subdir-objects])
 
 AC_PREREQ([2.61])
 AC_CONFIG_SRCDIR([src/libiphb.c])
@@ -32,7 +32,7 @@ AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
-AC_PROG_LIBTOOL
+LT_INIT
 PKG_PROG_PKG_CONFIG
 
 # Specify dir for local macros
@@ -44,7 +44,6 @@ AM_PROG_CC_C_O()
 # Pkgconf checks
 PKG_CHECK_MODULES(GLIB, glib-2.0)
 PKG_CHECK_MODULES(DBUS, dbus-1)
-PKG_CHECK_MODULES(DBUSGLIB, dbus-glib-1)
 PKG_CHECK_MODULES(MCE, mce)
 
 # Check libs (that are not yet checked)
@@ -66,6 +65,7 @@ AC_CONFIG_FILES([Makefile
                  src/Makefile
                  src/libiphb-uninstalled.pc
                  src/libiphb.pc
+                 dbus-gmain/Makefile
                  tests/Makefile])
 
 AC_OUTPUT
