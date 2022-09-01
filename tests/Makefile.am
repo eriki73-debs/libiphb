@@ -24,7 +24,7 @@ hbtest2_SOURCES = hbtest2.c
 hbtest2_LDADD = $(top_builddir)/src/libiphb.la
 
 hbtest3_SOURCES = hbtest3.c
-hbtest3_CFLAGS  = $(AM_CFLAGS) $(GLIB_CFLAGS) $(DBUS_CFLAGS) $(MCE_CFLAGS)
+hbtest3_CFLAGS  = $(AM_CFLAGS) $(GLIB_CFLAGS) $(DBUS_CFLAGS) #$(MCE_CFLAGS)
 hbtest3_LDADD   = ../src/libiphb.la $(DBUSGLIB_LIBS) \
 			$(top_builddir)/dbus-gmain/libdbus-gmain.la
 

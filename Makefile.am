@@ -1,1 +1,1 @@
-SUBDIRS = dbus-gmain src tests
+SUBDIRS = dbus-gmain src #tests

@@ -13,19 +13,6 @@ Build-Depends: debhelper (>= 4.1.0),
  automake
 Standards-Version: 3.7.2
 
-Package: hbtest
-Architecture: any
-Depends: libiphb0 (>= 0.61.6)
-Description: Test tool for IP Heartbeat service
- Command line utility to test IP Heartbeat functionality.
-
-Package: hbtest-dbg
-Priority: extra
-Architecture: any
-Depends: hbtest (= ${Source-Version})
-Description: Debug symbols for hbtest
- This package provides debug symbols for the IP Heartbeat test tool.
-
 Package: libiphb0
 Section: libs
 Architecture: any
@@ -37,13 +24,13 @@ Package: libiphb0-dbg
 Section: libdevel
 Priority: extra
 Architecture: any
-Depends: libiphb0 (= ${Source-Version})
+Depends: libiphb0 (= ${source:Version})
 Description: Debug symbols for libiphb0
  This package provides debug symbols for the IP Heartbeat API.
 
 Package: libiphb-dev
 Section: libdevel
 Architecture: any
-Depends: libiphb0 (= ${Source-Version}), ${shlibs:Depends}
+Depends: libiphb0 (= ${source:Version}), ${shlibs:Depends}
 Description: Development files for IP Heartbeat service
  This package contains C headers for the IP Heartbeat API.
