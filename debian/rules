@@ -20,13 +20,6 @@ else
 	CFLAGS += -O2
 endif
 
-# To build testcases as well, add "testcases" to DEB_BUILD_OPTIONS
-ifneq (,$(findstring testcases,$(DEB_BUILD_OPTIONS)))
-	DH_OPTIONS=
-else
-	DH_OPTIONS=-Ndsme-testcases
-endif
-
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
@@ -67,14 +60,14 @@ clean:
 install:
 	dh_testdir
 	dh_testroot
-	dh_clean -k -s
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into
 	# debian/tmp.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
-	dh_install -s
+	dh_install -a
 
 # Must not depend on anything. This is to be called by
 # binary-arch/binary-indep
